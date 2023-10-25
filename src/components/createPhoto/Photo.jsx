@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom"
 
-export const Photo = ({img, setImg, blog, setBlog}) => {
+const Photo = ({img, setImg, blog, setBlog}) => {
     const navigate = useNavigate()
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -24,3 +24,5 @@ return (
 </form>
 );
 }
+
+export default Photo

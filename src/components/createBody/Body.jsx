@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom"
 
-export const Body = ({body, setBody, blog, setBlog}) => {
+ const Body = ({body, setBody, blog, setBlog}) => {
     const navigate = useNavigate()
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -25,3 +25,5 @@ return (
 </form>
 );
 }
+
+export default Body

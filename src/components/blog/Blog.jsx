@@ -8,3 +8,5 @@ return (
 </div>
 );
 }
+
+export default Blog

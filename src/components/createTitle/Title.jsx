@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import './title.css'
-export const Title = ({title, setTitle, blog, setBlog}) => {
+const Title = ({title, setTitle, blog, setBlog}) => {
     const navigate = useNavigate()
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -23,3 +23,5 @@ return (
 </form>
 );
 }
+
+export default Title
