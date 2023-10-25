@@ -1,23 +1,55 @@
-import logo from './logo.svg';
+import { Link, Route, Routes } from 'react-router-dom';
 import './App.css';
+import { Title } from './components/createTitle/Title';
+import { Photo } from './components/createPhoto/Photo';
+import { Body } from './components/createBody/Body';
+import { Links } from './components/Links';
+import { Blog } from './components/blog/Blog';
+import { useState } from 'react';
 
 function App() {
+  const [blog, setBlog] = useState({
+    title: "",
+    body: "",
+    img: ""
+  })
+  const [title, setTitle] = useState("")
+  const [body, setBody] = useState("")
+  const [img, setImg] = useState("")
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <Link to="/">Home</Link>
+        <Link to="blog">Blog</Link>
       </header>
+      <div className='app-body'>   
+      <Routes>
+          <Route path='/' element={<Links />} />
+          <Route path='dummyTitle' element={<Title 
+          title={title} 
+          setTitle={setTitle}
+          blog={blog}
+          setBlog={setBlog}
+           />} />
+          <Route path='dummyBody' element={<Body 
+          body={body} 
+          setBody={setBody}
+          blog={blog}
+          setBlog={setBlog}
+          />} />
+          <Route path='dummyPhoto' element={<Photo 
+          img={img} 
+          setImg={setImg}
+          blog={blog}
+          setBlog={setBlog}
+          />} />
+          <Route path='blog' element={<Blog 
+          blog={blog}
+          />} />
+        </Routes>
+      </div>    
     </div>
   );
 }
